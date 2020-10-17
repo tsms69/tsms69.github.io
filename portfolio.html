@@ -1,0 +1,228 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name=“robots” content=“index,follow”>
+<meta name="description" content="Теплостроймонтажсервис. Отопление, водоснабжение, канализация, газ, электрика в городе Торжок Тверская область. Монтаж теплотрасс, отопительных котлов, газового оборудования и любых инженерных систем в кратчайшие сроки">
+<meta name="keywords" content="отопление, водоснабжение, электрика, инженерные системы, газовое оборудование, газ, канализация, проект, Торжок, Тверская область, Теплостроймонтажсервис, ТСМС, ТСМС69, строительные работы">
+<title>ООО "Теплостроймонтажсервис". Тверская область, Торжок. Отопление, водоснабжение, электрика,  газ </title>
+
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(55183246, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/55183246" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+<link href="https://fonts.googleapis.com/css?family=Cuprum|Merriweather|Play" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="style/color/blue.css" media="all" />
+<link rel="stylesheet" type="text/css" media="screen" href="style/css/prettyPhoto.css"  />
+<link rel="stylesheet" type="text/css" href="style/type/museo.css" media="all" />
+<link rel="stylesheet" type="text/css" href="style/type/ptsans.css" media="all" />
+<link rel="stylesheet" type="text/css" href="style/type/charis.css" media="all" />
+<link rel="stylesheet" type="text/css" href="style/css/ie7.css" media="all" />
+<link rel="stylesheet" type="text/css" href="style/css/ie8.css" media="all" />
+<link rel="stylesheet" type="text/css" href="style/css/ie9.css" media="all" />
+<script type="text/javascript" src="style/js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="style/js/jquery.masonry.min.js"></script> 
+<script type="text/javascript" src="style/js/ddsmoothmenu.js"></script>
+<script type="text/javascript" src="style/js/transify.js"></script>
+<script type="text/javascript" src="style/js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="style/js/jquery.superbgimage.min.js"></script>
+<script type="text/javascript" src="style/js/jquery.slickforms.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($){
+	$('.forms').dcSlickForms();
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+	
+      var 
+        speed = 1000,   // animation speed
+        $wall = $('#portfolio .items'),
+
+        masonryOptions = {         // initial masonry options
+
+          itemSelector: '.box:not(.invis)',
+          animate: true,
+          animationOptions: {
+            duration: speed,
+            queue: false
+          }
+        };
+		
+		$wall.imagesLoaded(function(){
+			
+			$wall.masonry(masonryOptions);
+			
+			// Create array of filters from link href
+			var arrFilter = [];
+			$('#filtering-nav a').each(function(){
+				fhash = $(this).attr('href').replace('#','');
+				if(fhash != 'all'){
+					arrFilter.push(fhash);
+				}
+			});
+			
+			//  Get the parameter value after the # symbol
+			var url=document.URL.split('#')[1];
+			if(url == undefined){
+				url = 'all';
+			}
+			$('#filtering-nav a.'+url).parent().addClass('active');
+			
+			if(jQuery.inArray(url, arrFilter) > '-1'){
+				// set masonry options animate to false
+				masonryOptions.animate = false;
+				// hide boxes that don't match the filter class
+				$wall.children().not('.'+url).toggleClass('invis').hide();
+			}
+		//	imageSetCss($(".box"));
+			// run masonry again
+			$wall.masonry(masonryOptions);
+		//	imageFadeIn($(".box"));
+		$wall.animate({opacity: 1},1000);
+			
+		});
+		
+		$('#filtering-nav a').click(function(e){
+			var color = $(this).attr('class');
+			filterClass = '.' + color;
+			$('#filtering-nav li').removeClass('active');
+			$(this).parent().addClass('active');
+			
+			if(filterClass=='.all') {
+			  // show all hidden boxes
+			  $wall.children('.invis').toggleClass('invis').fadeIn(speed);
+			} else {
+			  // hide visible boxes 
+			  $wall.children().not(filterClass).not('.invis').toggleClass('invis').fadeOut(speed);
+			  // show hidden boxes
+			  $wall.children(filterClass+'.invis').toggleClass('invis').fadeIn(speed);
+			}
+			$wall.masonry({animate: true});
+			// set hash in URL
+			location.hash = color;
+			e.preventDefault();
+		});
+});
+$.fn.imagesLoaded = function(a) {
+	var 
+	b=this.find("img"),
+	c=[],
+	d=this,
+	e=b.length;
+	
+	if(!b.length){
+		a.call(this);
+		return this
+	}
+	b.one("load error",function(){
+		--e===0&&(e=b.length,b.one("load error",function(){
+			--e===0&&a.call(d)}).each(function(){
+				this.src=c.shift()
+			})
+		)}
+	).each(function(){
+		c.push(this.src),this.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+	});
+	return this
+};
+  </script> 
+</head>
+<body>
+<div id="thumbs">
+<a href="style/images/art/bg3.jpg">3</a>
+</div>
+<div id="superbgimage">
+	<div class="scanlines"></div>
+</div>
+<div id="wrapper">
+  <div id="header">
+    <div class="logo"><a href="index.html"><img src="style/images/logo.png" alt="" />ООО "ТеплоСтройМонтажСервис"</a></div>
+    <div class="adress"><p>Тверская обл., г. Торжок, Ленинградское ш., д. 56</p></div>
+    <div class="social">
+      <a href="tel:7(910)931-33-61">+7(910)931-33-61</a>
+      <br>
+      <br>
+      <a href=mailto:tsms69@mail.ru>@Напишите нам</a>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <div id="menu" class="menu opacity">
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="portfolio.html">Наши работы</a>
+        <ul>
+          <li><a href="list-works.html">Перечень работ</a></li>
+          <li><a href="portfolio.html">Примеры работ</a></li>
+          <li><a href="traktor.html">Аренда экскаватора</a></li>
+        </ul>
+      </li>
+      <li><a href="licenses.html">Лицензии</a>
+      </li>
+      <li><a href="contact.html">Контакты</a></li>
+    </ul>
+    <br style="clear: left" />
+  </div>
+
+  <div id="container">
+    <h2>Наши работы</h2>
+    <p>В данном разделе представлены примеры ранее выполненных работ.</p>
+    <br>
+    <h3><a href="list-works.html">Полный перечень работ, выполняемых фирмой</a></h3>
+      <div id="portfolio">
+        <ul id="filtering-nav">
+          <li>Фильтр:</li>
+          <li><a class="all" href="#all">Все</a></li>
+          <li><a class="cat1" href="#cat1">Электрооборудование</a></li>
+          <li><a class="cat2" href="#cat2">Теплоснабжение</a></li>
+          <li><a class="cat3" href="#cat3">Водопровод</a></li>
+          <li><a class="cat4" href="#cat4">Газовое оборудование</a></li>
+          <li><a class="cat5" href="#cat5">Вентиляция</a></li>
+          <li><a class="cat6" href="#cat6">Канализация</a></li>
+        </ul>
+        <div class="clear"></div>
+        <div class="items">
+          <div class="box col5 cat2"><a href="style/images/art/p1.jpg" rel="prettyPhoto" title="Запорная арматура"><span class="overlay zoom"></span><img src="style/images/art/p1.jpg" alt="" /></a></div>
+          <div class="box col5 cat2"><a href="style/images/art/p2.jpg" rel="prettyPhoto" title="Комплексная работа"><span class="overlay zoom"></span><img src="style/images/art/p2.jpg" alt="" /></a></div>
+          <div class="box col5 cat2"><a href="style/images/art/p3.jpg" rel="prettyPhoto" title="Модернизация системы"><span class="overlay zoom"></span><img src="style/images/art/p3.jpg" alt="" /></a></div>
+          <div class="box col5 cat2"><a href="style/images/art/p4.jpg" rel="prettyPhoto" title=""><span class="overlay zoom"></span><img src="style/images/art/p4.jpg" alt="" /></a></div>
+          <div class="box col5 cat1"><a href="style/images/art/p5.jpg" rel="prettyPhoto" title="Электрощит"><span class="overlay zoom"></span><img src="style/images/art/p5.jpg" alt="" /></a></div>
+          <div class="box col5 cat2"><a href="style/images/art/p6.jpg" rel="prettyPhoto" title=""><span class="overlay zoom"></span><img src="style/images/art/p6.jpg" alt="" /></a></div>
+          <div class="box col5 cat2"><a href="style/images/art/p7.jpg" rel="prettyPhoto" title="Восстановление теплового пункта"><span class="overlay zoom"></span><img src="style/images/art/p7.jpg" alt="" /></a></div>
+          <div class="box col5 cat2"><a href="style/images/art/p8.jpg" rel="prettyPhoto" title="Замна теплотрассы на ул. Падерина"><span class="overlay zoom"></span><img src="style/images/art/p8.jpg" alt="" /></a></div>
+          <div class="box col5 cat2"><a href="style/images/art/p9.jpg" rel="prettyPhoto" title="Термоусадка изоляции в местах сварки"><span class="overlay zoom"></span><img src="style/images/art/p9.jpg" alt="" /></a></div>
+          <div class="box col5 cat2"><a href="style/images/art/p10.jpg" rel="prettyPhoto" title="Демонтаж старой теплотрассы"><span class="overlay zoom"></span><img src="style/images/art/p10.jpg" alt="" /></a></div>
+          <div class="box col5 cat2"><a href="style/images/art/p11.jpg" rel="prettyPhoto" title="Сварочные работы с трубами в ППУ"><span class="overlay zoom"></span><img src="style/images/art/p11.jpg" alt="" /></a></div>
+          <div class="box col5 cat2"><a href="style/images/art/p12.jpg" rel="prettyPhoto" title="Ремонт теплотрассы на Лен. шоссе"><span class="overlay zoom"></span><img src="style/images/art/p12.jpg" alt="" /></a></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+      <div class="footer-top"></div>
+      <div class="foot-one-fourth">
+        <h3>О нас</h3>
+        <p>Более 14 лет работы. Более 100 успешных проектов.</p><br/>
+        <p>Огромный опыт построения автоматизированных систем учета тепла. Весь спектр электромонтажных и сантехнических работ.</p><br/>
+      </div>
+    </div>
+    <div id="copyright">
+    <a href="contact.html">2020, Тверская область, г. Торжок. ООО "ТеплоСтройМонтажСервис"</a>
+    <br>
+    <a href="licenses.html">Лицензия № СРО-C-072-19112009 от 28.07.2020 г.</a>
+  </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="style/js/scripts.js"></script>
+</body>
+</html>
